@@ -14,7 +14,7 @@ spring:
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/cloudDB01
     username: root
-    password: 123456
+    password: root
     dbcp2:
       min-idle: 5
       initial-size: 5
@@ -29,7 +29,7 @@ mybatis:
 eureka: 
   client: #客户端注册进eureka服务列表内
     service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka/
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true
@@ -37,8 +37,8 @@ eureka:
 info:
   app.name: atguigu-microservicecloud-springcloudconfig01
   company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 ---
 server:
   port: 8001
@@ -51,7 +51,7 @@ spring:
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/cloudDB02
     username: root
-    password: 123456
+    password: root
     dbcp2:
       min-idle: 5
       initial-size: 5
@@ -66,7 +66,7 @@ mybatis:
 eureka: 
   client: #客户端注册进eureka服务列表内
     service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka/
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true
@@ -74,5 +74,5 @@ eureka:
 info:
   app.name: atguigu-microservicecloud-springcloudconfig02
   company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
